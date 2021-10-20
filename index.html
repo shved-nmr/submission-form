@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Truly Form</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="myscript.js"></script>
+    <script type="text/javascript" src="fi.json"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <form action="https://trulyagency.com/" name="myForm">
+        <label for="city">City:</label>
+
+        <input type="text" 
+               id="1" 
+               name="city" 
+               placeholder="Required" 
+               onblur="InvalidMsgCity(this)"
+               required>
+
+
+        <label for="area">Area:</label>
+
+        <input type="number"
+               id="2"
+               name="area"
+               min="7"
+               max="99"
+               placeholder="Required"
+               oninvalid="InvalidArea(area);"
+               oninput="InvalidArea(area);"
+               required="required">
+
+
+        <label for="email">Email:</label>
+
+        <input id="email"
+               oninvalid="InvalidMsgEmail(this);"
+               oninput="InvalidMsgEmail(this);"
+               name="email"
+               type="email"
+               required="required">
+
+        <input type="submit"
+               
+               >
+    </form>
+
+</body>
+</html>
