@@ -12,25 +12,23 @@ function InvalidMsgEmail(textbox) {
 
     return true;
 }
-function loadCities() {
-
+function compCities(cities) {
+    userCity = document.getElementById('1').value;
+    console.log(userCity);
 
 }
 
 function InvalidMsgCity(textbox) {
     $(document).ready(function () {
         $.getJSON('fi.json', function (data) {
-                var arrItems = [];              // The array to store JSON data.
+                var arrItems = [];
 
                 $.each(data, function (index, value) {
-                    arrItems.push(value.city);       // Push the value inside the array.
+                    arrItems.push(value.city);
                 });
 
-                // Use the data in the array in whatever way you want it.
-                // I am using the array to populate a <select> dropdown list.
-
             console.log(arrItems[0]);
-            console.log(arrItems[1]);
+            compCities('Turku');
             
         });
     });
