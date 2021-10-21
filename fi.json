@@ -1,5 +1,4 @@
-{
-  "cities": [
+[
     {
       "city": "Helsinki",
       "lat": "60.1756",
@@ -3587,5 +3586,3 @@
       "population_proper": ""
     }
   ]
-
-}
