@@ -36,15 +36,10 @@ function InvalidMsgCity(textbox) {
 
 
 function InvalidMsgArea(textbox) {
-
-    if (textbox.value) {
-        if (textbox.value > 99) {
-            textbox.setCustomValidity('The value cannot be bigger that 99');
-        } else if (textbox.value < 7) {
-            textbox.setCustomValidity('The value cannot be smaller than 7');
-        }
-    } else {
+    if (textbox.value === "") {
         textbox.setCustomValidity('Please fill in the surface area.');
+    } else {
+        textbox.setCustomValidity('');
     }
 
 }
