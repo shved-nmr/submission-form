@@ -74,6 +74,5 @@ function InvalidMsgEmail(textbox) {
         }
     }
 
-    alert("You have entered the following data:\n" + document.getElementById("1").value + ", " + document.getElementById("2").value + ", " + document.getElementById("email").value);
 
 }
