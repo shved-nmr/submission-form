@@ -33,7 +33,10 @@ function InvalidMsgCity(textbox) {
                     arrItems.push(value.city);
                 });
 
-            if (!compCities(arrItems)) {
+
+            if (document.getElementById('1').value === '') {
+                textbox.setCustomValidity('Please, input your city');
+            } else if (!compCities(arrItems)) {
                 textbox.setCustomValidity('Please, enter a valid city');
             } else {
                 textbox.setCustomValidity('');
