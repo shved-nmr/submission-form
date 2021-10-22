@@ -1,17 +1,3 @@
-function InvalidMsgEmail(textbox) {
-
-    var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    
-    if (textbox.value === '') {
-        textbox.setCustomValidity('Please fill in your email');
-    } else if (textbox.value.match(regex)) {
-        textbox.setCustomValidity('');
-    } else {
-        textbox.setCustomValidity('Check your email');
-    }
-
-    return true;
-}
 function compCities(cities) {
     userCity = document.getElementById('1').value;
 
@@ -24,6 +10,7 @@ function compCities(cities) {
     return false;
 }
 
+
 function InvalidMsgCity(textbox) {
     $(document).ready(function () {
         $.getJSON('fi.json', function (data) {
@@ -33,9 +20,8 @@ function InvalidMsgCity(textbox) {
                     arrItems.push(value.city);
                 });
 
-
             if (document.getElementById('1').value === '') {
-                textbox.setCustomValidity('Please, input your city');
+                textbox.setCustomValidity('Please fill in the city');
             } else if (!compCities(arrItems)) {
                 textbox.setCustomValidity('Please, enter a valid city');
             } else {
@@ -48,38 +34,32 @@ function InvalidMsgCity(textbox) {
 
 }
 
-//$.getJSON('fi.json', function (data) {
-//    console.log(data);
-//});
 
-//$(function () {
-//    var $orders = $('#orders');
-//    $.ajax({
-//        type: 'GET',
-//        url: 'fi.json',
-//        dataType: 'json',
-//        success: function (response) {
-//            var data = response.data;
-//            $.each(data, function (i, data) {
-//                $orders.append('<li>dataid: ' + data.id + '</li>');
-//            });
-//        }
+function InvalidMsgArea(textbox) {
 
-//    });
-//});
+    if (textbox.value) {
+        if (textbox.value > 99) {
+            textbox.setCustomValidity('The value cannot be bigger that 99');
+        } else if (textbox.value < 7) {
+            textbox.setCustomValidity('The value cannot be smaller than 7');
+        }
+    } else {
+        textbox.setCustomValidity('Please fill in the surface area.');
+    }
 
-//$.ajax({
-//    url: 'fi.json',
-//    dataType: 'json',
-//    success: function (data) {
+}
 
-//        $(data.cities).each(function (index, value) {
-//            console.log('we made it here yeeeeea');
-//            arrItems.push(value.city);
-//        });
+function InvalidMsgEmail(textbox) {
 
+    var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-//    }
+    if (textbox.value === '') {
+        textbox.setCustomValidity('Please fill in your email');
+    } else if (textbox.value.match(regex)) {
+        textbox.setCustomValidity('');
+    } else {
+        textbox.setCustomValidity('Check your email');
+    }
 
-//});
-//console.log(arrItems[1]);
+    return true;
+}

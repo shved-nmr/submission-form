@@ -25,12 +25,9 @@
         <input type="number"
                id="2"
                name="area"
-               min="7"
-               max="99"
                placeholder="Required"
-               oninvalid="InvalidArea(area);"
-               oninput="InvalidArea(area);"
-               required="required">
+               oninvalid="InvalidMsgArea(this);"
+               onblur="InvalidMsgArea(this);">
 
 
         <label for="email">Email:</label>
