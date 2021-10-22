@@ -14,10 +14,14 @@ function InvalidMsgEmail(textbox) {
 }
 function compCities(cities) {
     userCity = document.getElementById('1').value;
-    //console.log(userCity);
+
     for (let i = 0; i < cities.length; i++) {
-        console.log(cities[i]);
+        if (userCity === cities[i]) {
+            return true;
+            
+        }
     }
+    return false;
 }
 
 function InvalidMsgCity(textbox) {
@@ -29,8 +33,9 @@ function InvalidMsgCity(textbox) {
                     arrItems.push(value.city);
                 });
 
-            console.log(arrItems[0]);
-            compCities(arrItems);
+            if (compCities(arrItems)) {
+                console.log('true');
+            }
             
         });
     });
