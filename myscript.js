@@ -54,7 +54,13 @@ function InvalidMsgEmail(textbox) {
         console.log('matched gmail');
 
         if (!textbox.value.match(regexGmailCom)) { //check if gmail.com
-            textbox.setCustomValidity('.com is missing');
+            //textbox.setCustomValidity('.com is missing');   // Originally, the textbox wouldn't let the user to submit the form without .com
+
+            const newEmail = textbox.value.split("@");
+            newEmail[1] = '@gmail.com'
+            document.getElementById("email").value = newEmail.join("");
+            console.log(document.getElementById("email").value);     // Now, the .com is fixed for the user
+
         } else {
             textbox.setCustomValidity('');
         }
@@ -68,11 +74,6 @@ function InvalidMsgEmail(textbox) {
         }
     }
 
+    alert("You have entered the following data:\n" + document.getElementById("1").value + ", " + document.getElementById("2").value + ", " + document.getElementById("email").value);
 
-
-}
-
-
-function gmailCheck(email) {
-    console.log('issa match');
 }
