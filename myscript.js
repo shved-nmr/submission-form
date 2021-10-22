@@ -15,10 +15,10 @@ function InvalidMsgEmail(textbox) {
 function compCities(cities) {
     userCity = document.getElementById('1').value;
 
+
     for (let i = 0; i < cities.length; i++) {
         if (userCity === cities[i]) {
             return true;
-            
         }
     }
     return false;
@@ -33,8 +33,10 @@ function InvalidMsgCity(textbox) {
                     arrItems.push(value.city);
                 });
 
-            if (compCities(arrItems)) {
-                console.log('true');
+            if (!compCities(arrItems)) {
+                textbox.setCustomValidity('Please, enter a valid city');
+            } else {
+                textbox.setCustomValidity('');
             }
             
         });
