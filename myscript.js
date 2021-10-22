@@ -14,8 +14,10 @@ function InvalidMsgEmail(textbox) {
 }
 function compCities(cities) {
     userCity = document.getElementById('1').value;
-    console.log(userCity);
-
+    //console.log(userCity);
+    for (let i = 0; i < cities.length; i++) {
+        console.log(cities[i]);
+    }
 }
 
 function InvalidMsgCity(textbox) {
@@ -28,7 +30,7 @@ function InvalidMsgCity(textbox) {
                 });
 
             console.log(arrItems[0]);
-            compCities('Turku');
+            compCities(arrItems);
             
         });
     });
