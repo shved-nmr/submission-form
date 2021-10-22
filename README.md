@@ -12,3 +12,6 @@ The email field checks if the input is an email via regex. If "@gmail" is detect
 part (.com) for the user.
 
 The code was tested in **Mozilla Firefox**. The city checker might not work in Chrome.
+
+
+**ATTENTION ** For the city checker to work, you need to run your local machine as a server. Then, open inde.html as http://localhost:8000/.../index.html
