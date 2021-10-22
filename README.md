@@ -11,4 +11,4 @@ The area field checks if the input is a number and then ensures that the number 
 The email field checks if the input is an email via regex. If "@gmail" is detected in the input, the form will automatically fill out the remaining 
 part (.com) for the user.
 
-The code was tested in Mozilla Firefox. The city checker might not work in Chrome.
+The code was tested in **Mozilla Firefox**. The city checker might not work in Chrome.
