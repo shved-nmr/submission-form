@@ -47,7 +47,11 @@ function InvalidMsgArea(textbox) {
 function InvalidMsgEmail(textbox) {
 
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var regexGmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[gmail]+(?:\.[a-zA-Z0-9-]+)*$/;
 
+    if (textbox.value.match(regexGmail)) {
+        gmailCheck(textbox.value);
+    }
     if (textbox.value === '') {
         textbox.setCustomValidity('Please fill in your email');
     } else if (textbox.value.match(regex)) {
@@ -57,4 +61,9 @@ function InvalidMsgEmail(textbox) {
     }
 
     return true;
+}
+
+
+function gmailCheck(email) {
+    console.log('issa match');
 }
