@@ -47,20 +47,29 @@ function InvalidMsgArea(textbox) {
 function InvalidMsgEmail(textbox) {
 
     var regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    var regexGmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[gmail]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var regexGmail = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@gmail/g;
+    var regexGmailCom = /([a-zA-Z0-9]+)([\.{1}])?([a-zA-Z0-9]+)\@gmail([\.])com/g;
 
-    if (textbox.value.match(regexGmail)) {
-        gmailCheck(textbox.value);
-    }
-    if (textbox.value === '') {
-        textbox.setCustomValidity('Please fill in your email');
-    } else if (textbox.value.match(regex)) {
-        textbox.setCustomValidity('');
-    } else {
-        textbox.setCustomValidity('Check your email');
+    if (textbox.value.match(regexGmail)) { //check if gmail
+        console.log('matched gmail');
+
+        if (!textbox.value.match(regexGmailCom)) { //check if gmail.com
+            textbox.setCustomValidity('.com is missing');
+        } else {
+            textbox.setCustomValidity('');
+        }
+    } else { //if not gmail
+        if (textbox.value === '') {
+            textbox.setCustomValidity('Please fill in your email');
+        } else if (textbox.value.match(regex)) {
+            textbox.setCustomValidity('');
+        } else {
+            textbox.setCustomValidity('Check your email');
+        }
     }
 
-    return true;
+
+
 }
 
 
