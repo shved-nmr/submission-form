@@ -3,7 +3,7 @@ This form contains 3 fields that prompt a city, an area and an email.
 
 All fields require some input, so if it is left empty, the program will ask for an input with a custom error message.
 
-The city field checks from a JSON file if the inputted city is in Finland. If the city doesn't match, the form does not allow submission and asks 
+The city field checks from a JSON file if the inputted city is in Finland. If the city doesn't match, the form does not allow the submission and asks 
 to check the input with a custom error message.
 
 The area field checks if the input is a number and then ensures that the number is within the allowed range.
@@ -12,6 +12,3 @@ The email field checks if the input is an email via regex. If "@gmail" is detect
 part (.com) for the user.
 
 The code was tested in **Mozilla Firefox**. The city checker might not work in Chrome.
-
-
-**ATTENTION ** For the city checker to work, you need to run your local machine as a server. Then, open inde.html as http://localhost:8000/.../index.html
